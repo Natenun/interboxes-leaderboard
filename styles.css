@@ -1,0 +1,128 @@
+:root{
+  --bg:#0b0f14;
+  --card:#0f1620;
+  --muted:#8aa0b2;
+  --text:#eaf2ff;
+  --accent:#b7ff00;
+  --line:rgba(255,255,255,.08);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: radial-gradient(1200px 700px at 20% -10%, rgba(183,255,0,.14), transparent 60%),
+              radial-gradient(900px 600px at 90% 10%, rgba(56,182,255,.14), transparent 55%),
+              var(--bg);
+  color:var(--text);
+}
+
+.header{
+  padding:18px 16px;
+  border-bottom:1px solid var(--line);
+  position:sticky; top:0;
+  background: rgba(11,15,20,.85);
+  backdrop-filter: blur(10px);
+}
+
+.brand{display:flex; gap:12px; align-items:center}
+.logo{
+  width:44px; height:44px; border-radius:12px;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg, rgba(183,255,0,.25), rgba(255,102,196,.18));
+  border:1px solid var(--line);
+  font-weight:800;
+}
+h1{margin:0; font-size:18px; line-height:1.2}
+.sub{margin:2px 0 0; color:var(--muted); font-size:12px}
+
+.controls{
+  display:flex; gap:10px; margin-top:12px;
+}
+input, select{
+  width:100%;
+  background: rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  color:var(--text);
+  padding:10px 12px;
+  border-radius:12px;
+  outline:none;
+}
+select{max-width:180px}
+
+.container{max-width:980px; margin:0 auto; padding:16px}
+
+.top3{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:12px;
+  margin-top:10px;
+}
+.card{
+  background: rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:12px;
+}
+.rankBadge{
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-size:12px;
+  color:var(--muted);
+}
+.rankNum{
+  color:var(--accent);
+  font-weight:800;
+}
+
+.athleteRow{
+  display:flex; gap:10px; align-items:center;
+  margin-top:10px;
+}
+.avatar{
+  width:44px; height:44px; border-radius:14px;
+  border:1px solid var(--line);
+  object-fit:cover;
+  background: rgba(255,255,255,.06);
+}
+.name{font-weight:750}
+.box{color:var(--muted); font-size:12px}
+
+.tableCard{
+  margin-top:14px;
+  background: rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+}
+.tableHeader{
+  display:flex; justify-content:space-between; align-items:flex-end;
+  padding:14px 14px 10px;
+  border-bottom:1px solid var(--line);
+}
+.tableHeader h2{margin:0; font-size:16px}
+.hint{color:var(--muted); font-size:12px}
+
+.tableWrap{overflow:auto}
+table{width:100%; border-collapse:collapse; min-width:760px}
+th, td{
+  padding:12px 14px;
+  border-bottom:1px solid var(--line);
+  text-align:left;
+  font-size:14px;
+}
+th{color:var(--muted); font-weight:650; font-size:12px; letter-spacing:.02em}
+.right{text-align:right}
+td small{color:var(--muted)}
+tr:hover td{background: rgba(255,255,255,.03)}
+
+.footer{
+  padding:16px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+}
