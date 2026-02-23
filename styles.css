@@ -20,25 +20,44 @@ body{
 .header{
   padding:18px 16px;
   border-bottom:1px solid var(--line);
-  position:sticky; top:0;
+  position:sticky;
+  top:0;
   background: rgba(11,15,20,.85);
   backdrop-filter: blur(10px);
 }
 
 .brand{display:flex; gap:12px; align-items:center}
+
+/* Logo de la liga (header) */
 .logo{
-  width:44px; height:44px; border-radius:12px;
-  display:grid; place-items:center;
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+
   background: linear-gradient(135deg, rgba(183,255,0,.25), rgba(255,102,196,.18));
   border:1px solid var(--line);
-  font-weight:800;
 }
+
+.logoImg{
+  width:36px;
+  height:36px;
+  object-fit:contain;
+  display:block;
+}
+
 h1{margin:0; font-size:18px; line-height:1.2}
 .sub{margin:2px 0 0; color:var(--muted); font-size:12px}
 
 .controls{
-  display:flex; gap:10px; margin-top:12px;
+  display:flex;
+  gap:10px;
+  margin-top:12px;
 }
+
 input, select{
   width:100%;
   background: rgba(255,255,255,.04);
@@ -52,6 +71,33 @@ select{max-width:180px}
 
 .container{max-width:980px; margin:0 auto; padding:16px}
 
+/* Boxes chips */
+.boxes{
+  display:flex;
+  gap:10px;
+  overflow:auto;
+  padding:10px 2px 2px;
+}
+.boxChip{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  background: rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:8px 12px;
+  white-space:nowrap;
+}
+.boxChip img{
+  width:26px;
+  height:26px;
+  border-radius:9px;
+  border:1px solid var(--line);
+  object-fit:cover;
+}
+.boxChip small{color:var(--muted)}
+
+/* Top 3 */
 .top3{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -80,11 +126,15 @@ select{max-width:180px}
 }
 
 .athleteRow{
-  display:flex; gap:10px; align-items:center;
+  display:flex;
+  gap:10px;
+  align-items:center;
   margin-top:10px;
 }
 .avatar{
-  width:44px; height:44px; border-radius:14px;
+  width:44px;
+  height:44px;
+  border-radius:14px;
   border:1px solid var(--line);
   object-fit:cover;
   background: rgba(255,255,255,.06);
@@ -92,6 +142,7 @@ select{max-width:180px}
 .name{font-weight:750}
 .box{color:var(--muted); font-size:12px}
 
+/* Tabla */
 .tableCard{
   margin-top:14px;
   background: rgba(255,255,255,.03);
@@ -100,7 +151,9 @@ select{max-width:180px}
   overflow:hidden;
 }
 .tableHeader{
-  display:flex; justify-content:space-between; align-items:flex-end;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
   padding:14px 14px 10px;
   border-bottom:1px solid var(--line);
 }
@@ -126,23 +179,10 @@ tr:hover td{background: rgba(255,255,255,.03)}
   color:var(--muted);
   font-size:12px;
 }
-.boxes{
-  display:flex;
-  gap:10px;
-  overflow:auto;
-  padding:10px 2px 2px;
+
+/* Responsive (móvil) */
+@media (max-width: 520px){
+  .controls{flex-direction:column;}
+  select{max-width:100%;}
+  .top3{grid-template-columns:1fr;}
 }
-.boxChip{
-  display:flex; gap:10px; align-items:center;
-  background: rgba(255,255,255,.03);
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:8px 12px;
-  white-space:nowrap;
-}
-.boxChip img{
-  width:26px; height:26px; border-radius:9px;
-  border:1px solid var(--line);
-  object-fit:cover;
-}
-.boxChip small{color:var(--muted)}
