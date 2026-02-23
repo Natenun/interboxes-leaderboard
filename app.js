@@ -1,5 +1,5 @@
 // 1) Pega aquí el link CSV publicado de tu pestaña "Public"
-const CSV_URL = "PEGA_AQUI_TU_CSV_PUBLICADO";
+const CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRkNVaGJvGsFXW3tlLZ8PiM3PPHltGMCVthJszUlJXCsMdM8UMTsb-V2JB2PHs6vuGNju6k_ucLDnEO/pub?gid=923538560&single=true&output=csv";
 
 // Config: 30 atletas, 1er lugar 30 pts
 const MAX_ATHLETES = 30;
