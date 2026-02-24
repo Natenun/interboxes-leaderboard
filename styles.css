@@ -249,8 +249,8 @@ select{max-width:180px}
 }
 
 .avatar{
-  width:74px;
-  height:74px;
+  width:54px;
+  height:54px;
   border-radius:14px;
   border:1px solid var(--line);
   object-fit:cover;
