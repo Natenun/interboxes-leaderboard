@@ -37,11 +37,9 @@ body{
   align-items:center;
   justify-content:center;
   overflow:hidden;
-
   background: linear-gradient(135deg, rgba(183,255,0,.25), rgba(255,102,196,.18));
   border:1px solid var(--line);
 }
-
 .logoImg{
   width:36px;
   height:36px;
@@ -71,31 +69,131 @@ select{max-width:180px}
 
 .container{max-width:980px; margin:0 auto; padding:16px}
 
-/* Boxes chips */
+/* =========================
+   TEAM STANDINGS (Boxes)
+   Logo con más importancia
+   ========================= */
+
 .boxes{
   display:flex;
-  gap:10px;
+  gap:12px;
   overflow:auto;
-  padding:10px 2px 2px;
+  padding:12px 2px 6px;
 }
+
 .boxChip{
-  display:flex;
-  gap:10px;
-  align-items:center;
+  min-width: 320px;
   background: rgba(255,255,255,.03);
   border:1px solid var(--line);
-  border-radius:999px;
-  padding:8px 12px;
+  border-radius:18px;
+  padding:12px 14px;
   white-space:nowrap;
 }
-.boxChip img{
-  width:26px;
-  height:26px;
-  border-radius:9px;
-  border:1px solid var(--line);
-  object-fit:cover;
+
+.boxMeta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
 }
-.boxChip small{color:var(--muted)}
+
+.boxLeft{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width: 0;
+}
+
+.boxLogoWrap{
+  width:72px;
+  height:72px;
+  border-radius:20px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.06);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  flex: 0 0 auto;
+}
+
+.boxLogoWrap img{
+  width:62px;
+  height:62px;
+  object-fit:contain;
+  display:block;
+}
+
+.boxName{
+  font-weight:900;
+  font-size:15px;
+  line-height:1.1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.boxSub{
+  color:var(--muted);
+  font-size:11px;
+  margin-top:4px;
+}
+
+.boxRight{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:8px;
+  flex: 0 0 auto;
+}
+
+.boxRank{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:5px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-size:12px;
+  color:var(--muted);
+}
+
+.boxRank strong{
+  color:var(--accent);
+}
+
+.boxPts{
+  text-align:right;
+  font-weight:900;
+  font-size:15px;
+}
+
+.boxPts small{
+  display:block;
+  color:var(--muted);
+  font-weight:650;
+  font-size:11px;
+  margin-top:2px;
+}
+
+/* Campeón del box */
+.boxChip:first-child{
+  border:1px solid rgba(255,215,0,.5);
+  background: linear-gradient(
+    135deg,
+    rgba(255,215,0,.12),
+    rgba(255,215,0,.05)
+  );
+}
+
+.boxChip:first-child .boxLogoWrap{
+  width:82px;
+  height:82px;
+}
+
+.boxChip:first-child .boxLogoWrap img{
+  width:70px;
+  height:70px;
+}
 
 /* Top 3 */
 .top3{
@@ -185,126 +283,5 @@ tr:hover td{background: rgba(255,255,255,.03)}
   .controls{flex-direction:column;}
   select{max-width:100%;}
   .top3{grid-template-columns:1fr;}
-}
-/* =========================
-   TEAM STANDINGS (Boxes)
-   Logo con más importancia
-   ========================= */
-
-.boxes{
-  display:flex;
-  gap:12px;
-  overflow:auto;
-  padding:12px 2px 6px;
-}
-
-.boxChip{
-  min-width: 320px;
-  background: rgba(255,255,255,.03);
-  border:1px solid var(--line);
-  border-radius:18px;
-  padding:12px 14px;
-  white-space:nowrap;
-}
-
-.boxMeta{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-}
-
-.boxLeft{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  min-width: 0;
-}
-
-.boxLogoWrap{
-  width:72px;
-  height:72px;
-  border-radius:20px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.06);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  flex: 0 0 auto;
-}
-
-.boxLogoWrap img{
-  width:62px;
-  height:62px;
-  object-fit:contain;
-  display:block;
-}
-
-.boxName{
-  font-weight:900;
-  font-size:15px;
-  line-height:1.1;
-}
-
-.boxSub{
-  color:var(--muted);
-  font-size:11px;
-  margin-top:4px;
-}
-
-.boxRight{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  gap:8px;
-  flex: 0 0 auto;
-}
-
-.boxRank{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:5px 10px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  font-size:12px;
-  color:var(--muted);
-}
-
-.boxRank strong{
-  color:var(--accent);
-}
-
-.boxPts{
-  text-align:right;
-  font-weight:900;
-  font-size:15px;
-}
-
-.boxPts small{
-  display:block;
-  color:var(--muted);
-  font-weight:650;
-  font-size:11px;
-  margin-top:2px;
-}
-/* Campeón del box */
-.boxChip:first-child{
-  border:1px solid rgba(255,215,0,.5);
-  background: linear-gradient(
-    135deg,
-    rgba(255,215,0,.12),
-    rgba(255,215,0,.05)
-  );
-}
-
-.boxChip:first-child .boxLogoWrap{
-  width:82px;
-  height:82px;
-}
-
-.boxChip:first-child .boxLogoWrap img{
-  width:70px;
-  height:70px;
+  .boxChip{min-width: 280px;}
 }
