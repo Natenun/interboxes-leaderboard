@@ -243,15 +243,13 @@ tr:hover td{background: rgba(255,255,255,.03)}
 
 .boxName{
   font-weight:900;
-  font-size:14px;
+  font-size:15px;
   line-height:1.1;
-  overflow:hidden;
-  text-overflow:ellipsis;
 }
 
 .boxSub{
   color:var(--muted);
-  font-size:12px;
+  font-size:11px;
   margin-top:4px;
 }
 
