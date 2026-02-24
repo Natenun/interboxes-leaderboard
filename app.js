@@ -282,8 +282,8 @@ function renderTable(sorted, view, query) {
   <div style="display:flex; gap:10px; align-items:center;">
     <img
       src="${safeImg(a.box_logo)}"
-      alt="${escapeHTML(a.box || "")}"
-      style="width:40px;height:40px;border-radius:12px;object-fit:contain;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:4px;"
+      alt="${escapeHTML(a.box || "")}"      
+      style="width:52px;height:52px;border-radius:14px;object-fit:contain;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:5px;"
       onerror="this.src='${fallbackAvatar()}'"
     >
     <div>${escapeHTML(a.box || "")}</div>
