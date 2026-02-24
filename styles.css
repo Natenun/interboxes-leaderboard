@@ -186,23 +186,88 @@ tr:hover td{background: rgba(255,255,255,.03)}
   select{max-width:100%;}
   .top3{grid-template-columns:1fr;}
 }
-/* Team Standings (Boxes) */
+/* =========================
+   TEAM STANDINGS (Boxes)
+   Logo con más importancia
+   ========================= */
+
+.boxes{
+  display:flex;
+  gap:12px;
+  overflow:auto;
+  padding:12px 2px 6px;
+}
+
 .boxChip{
-  min-width: 260px; /* para que se vea pro en carrusel */
+  min-width: 320px;
+  background: rgba(255,255,255,.03);
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:12px 14px;
+  white-space:nowrap;
 }
 
 .boxMeta{
   display:flex;
-  gap:10px;
   align-items:center;
   justify-content:space-between;
+  gap:14px;
+}
+
+.boxLeft{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width: 0;
+}
+
+.boxLogoWrap{
+  width:56px;
+  height:56px;
+  border-radius:16px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.05);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  flex: 0 0 auto;
+}
+
+.boxLogoWrap img{
+  width:48px;
+  height:48px;
+  object-fit:contain; /* para logos */
+  display:block;
+}
+
+.boxName{
+  font-weight:900;
+  font-size:14px;
+  line-height:1.1;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.boxSub{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:4px;
+}
+
+.boxRight{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:8px;
+  flex: 0 0 auto;
 }
 
 .boxRank{
   display:inline-flex;
   align-items:center;
   gap:8px;
-  padding:4px 8px;
+  padding:5px 10px;
   border-radius:999px;
   border:1px solid var(--line);
   font-size:12px;
@@ -215,11 +280,14 @@ tr:hover td{background: rgba(255,255,255,.03)}
 
 .boxPts{
   text-align:right;
-  font-weight:800;
+  font-weight:900;
+  font-size:15px;
 }
 
 .boxPts small{
   display:block;
   color:var(--muted);
-  font-weight:600;
+  font-weight:650;
+  font-size:11px;
+  margin-top:2px;
 }
