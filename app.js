@@ -297,7 +297,7 @@ async function load() {
   const raw = parseCSV(text);
   rows = raw.map(computeModel);
 
-  renderBoxes(rows);
+  renderBoxes(rows, "overall"); // ✅ primera carga
   refresh();
 
   els.lastUpdated.textContent =
@@ -306,6 +306,7 @@ async function load() {
 
 function refresh() {
   const view = els.workout.value;
+
   els.tableTitle.textContent =
     view==="w1" ? "Workout 1" :
     view==="w2" ? "Workout 2" :
@@ -313,6 +314,8 @@ function refresh() {
     "Overall";
 
   const sorted = sortByView(rows, view);
+
+  renderBoxes(rows, view);      // ✅ actualiza ranking de boxes según view
   renderTop3(sorted, view);
   renderTable(sorted, view, els.search.value);
 }
