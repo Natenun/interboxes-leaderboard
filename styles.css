@@ -291,3 +291,22 @@ tr:hover td{background: rgba(255,255,255,.03)}
   font-size:11px;
   margin-top:2px;
 }
+/* Campeón del box */
+.boxChip:first-child{
+  border:1px solid rgba(255,215,0,.5);
+  background: linear-gradient(
+    135deg,
+    rgba(255,215,0,.12),
+    rgba(255,215,0,.05)
+  );
+}
+
+.boxChip:first-child .boxLogoWrap{
+  width:82px;
+  height:82px;
+}
+
+.boxChip:first-child .boxLogoWrap img{
+  width:70px;
+  height:70px;
+}
