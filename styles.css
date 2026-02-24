@@ -222,9 +222,9 @@ tr:hover td{background: rgba(255,255,255,.03)}
 }
 
 .boxLogoWrap{
-  width:56px;
-  height:56px;
-  border-radius:16px;
+  width:64px;
+  height:64px;
+  border-radius:18px;
   border:1px solid var(--line);
   background: rgba(255,255,255,.05);
   display:flex;
@@ -235,9 +235,9 @@ tr:hover td{background: rgba(255,255,255,.03)}
 }
 
 .boxLogoWrap img{
-  width:48px;
-  height:48px;
-  object-fit:contain; /* para logos */
+  width:56px;
+  height:56px;
+  object-fit:contain;
   display:block;
 }
 
