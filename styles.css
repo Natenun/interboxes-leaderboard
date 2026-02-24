@@ -186,3 +186,40 @@ tr:hover td{background: rgba(255,255,255,.03)}
   select{max-width:100%;}
   .top3{grid-template-columns:1fr;}
 }
+/* Team Standings (Boxes) */
+.boxChip{
+  min-width: 260px; /* para que se vea pro en carrusel */
+}
+
+.boxMeta{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.boxRank{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:4px 8px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-size:12px;
+  color:var(--muted);
+}
+
+.boxRank strong{
+  color:var(--accent);
+}
+
+.boxPts{
+  text-align:right;
+  font-weight:800;
+}
+
+.boxPts small{
+  display:block;
+  color:var(--muted);
+  font-weight:600;
+}
