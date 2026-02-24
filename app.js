@@ -91,8 +91,7 @@ function computeModel(r) {
 // ==========================
 // RENDER BOXES
 // ==========================
-function renderBoxes(data){
-  // Agrupa y suma por box
+function renderBoxes(data, view="overall"){
   const map = new Map();
 
   data.forEach(a => {
@@ -109,20 +108,27 @@ function renderBoxes(data){
     }
 
     const item = map.get(boxName);
-    item.totalPts += Number(a.overallPts) || 0;
+
+    const pts =
+      view === "w1" ? (Number(a.w1Pts) || 0) :
+      view === "w2" ? (Number(a.w2Pts) || 0) :
+      view === "w3" ? (Number(a.w3Pts) || 0) :
+      (Number(a.overallPts) || 0);
+
+    item.totalPts += pts;
     item.athletes += 1;
 
-    // Si algún atleta trae logo y el primero no, lo toma
     if (!item.logo && a.box_logo) item.logo = a.box_logo;
   });
 
-  // Ordena por puntos desc, luego por nombre
   const boxes = [...map.values()].sort((a,b) => {
     if (b.totalPts !== a.totalPts) return b.totalPts - a.totalPts;
     return a.name.localeCompare(b.name);
   });
 
-  // Render estilo ranking 1–6
+  const label =
+    view === "w1" ? "W1" : view === "w2" ? "W2" : view === "w3" ? "W3" : "Total";
+
   els.boxes.innerHTML = boxes.map((b, idx) => {
     const rank = idx + 1;
     const medal = rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : "🏁";
@@ -130,20 +136,22 @@ function renderBoxes(data){
     return `
       <div class="boxChip">
         <div class="boxMeta">
-          <div style="display:flex; gap:10px; align-items:center;">
-            <img src="${safeImg(b.logo)}" alt="${escapeHTML(b.name)}"
-                 onerror="this.src='${fallbackAvatar()}'">
-            <div>
-              <div style="font-weight:800">${escapeHTML(b.name)}</div>
-              <small>${b.athletes} atletas</small>
+          <div class="boxLeft">
+            <div class="boxLogoWrap">
+              <img src="${safeImg(b.logo)}" alt="${escapeHTML(b.name)}"
+                   onerror="this.src='${fallbackAvatar()}'">
+            </div>
+            <div style="min-width:0;">
+              <div class="boxName">${escapeHTML(b.name)}</div>
+              <div class="boxSub">${b.athletes} atletas</div>
             </div>
           </div>
 
-          <div style="display:flex; flex-direction:column; align-items:flex-end; gap:6px;">
+          <div class="boxRight">
             <div class="boxRank">${medal} <strong>#${rank}</strong></div>
             <div class="boxPts">
               ${b.totalPts} pts
-              <small>Total del box</small>
+              <small>${label} del box</small>
             </div>
           </div>
         </div>
