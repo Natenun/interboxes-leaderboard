@@ -278,7 +278,17 @@ function renderTable(sorted, view, query) {
             </div>
           </div>
         </td>
-        <td>${escapeHTML(a.box || "")}</td>
+       <td>
+  <div style="display:flex; gap:10px; align-items:center;">
+    <img
+      src="${safeImg(a.box_logo)}"
+      alt="${escapeHTML(a.box || "")}"
+      style="width:28px;height:28px;border-radius:10px;object-fit:contain;border:1px solid var(--line);background:rgba(255,255,255,.04);padding:3px;"
+      onerror="this.src='${fallbackAvatar()}'"
+    >
+    <div>${escapeHTML(a.box || "")}</div>
+  </div>
+</td>
         <td class="right"><strong>${pts}</strong></td>
         <td><small>${escapeHTML(w1)}</small></td>
         <td><small>${escapeHTML(w2)}</small></td>
