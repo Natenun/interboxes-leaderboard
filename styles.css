@@ -285,3 +285,22 @@ tr:hover td{background: rgba(255,255,255,.03)}
   .top3{grid-template-columns:1fr;}
   .boxChip{min-width: 280px;}
 }
+.leagueLogo{
+  width:64px;
+  height:64px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.leagueLogoImg{
+  width:56px;
+  height:56px;
+  object-fit:contain;
+  display:block;
+}
+
+.invert{
+  filter: invert(1) contrast(1.2) brightness(1.1);
+}
